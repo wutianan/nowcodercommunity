@@ -1,9 +1,6 @@
 package com.fz.newcoder.community.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
@@ -11,10 +8,8 @@ import java.util.Date;
  * @author zxf
  * @date 2022/6/10
  */
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
-@Getter
+
+@Data
 public class User {
     private int id;
     private String username;
