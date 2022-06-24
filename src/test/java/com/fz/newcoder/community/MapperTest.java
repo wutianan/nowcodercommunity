@@ -22,7 +22,7 @@ public class MapperTest {
     private LoginTicketMapper loginTicketMapper;
 
     @Test
-    public void testInsertTicket(){
+    public void testInsertTicket() {
         LoginTicket loginTicket = new LoginTicket();
         loginTicket.setTicket("asda");
         loginTicket.setExpired(new Date());
@@ -32,14 +32,25 @@ public class MapperTest {
     }
 
     @Test
-    public void testSelectTicket(){
+    public void testSelectTicket() {
         LoginTicket asda = loginTicketMapper.selectByTicket("asda");
         System.out.println(asda);
     }
 
     @Test
-    public void testUpdateTicket(){
-        loginTicketMapper.updateStatus("asda",1);
+    public void testUpdateTicket() {
+        loginTicketMapper.updateStatus("asda", 1);
     }
 
+    @Test
+    public void getLongestPalindrome() {
+        // write code here
+        String A = "ABAAB";
+        StringBuffer b = new StringBuffer(A);
+        StringBuffer reverse = b;
+        reverse.reverse();
+        System.out.println(b);
+        System.out.println(reverse);
+
+    }
 }
