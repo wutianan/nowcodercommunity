@@ -9,8 +9,14 @@
     </sql>
 
     <sql id="insertFields">
-        userId,entityType,entityId,targetId,content,status,createTime
+        user_Id,entity_type,entity_id,target_Id,content,status,create_time
     </sql>
+
+    <insert id="insertComment">
+        insert into newcodercommnuity.comment (<include refid="insertFields"></include>)
+        values (#{userId},#{entityType},#{entityId},#{targetId},#{content},#{status},#{createTime})
+    </insert>
+
 
     <select id="selectCommentByEntity" resultType="com.fz.newcoder.community.entity.Comment">
         select <include refid="selectFields"></include>
