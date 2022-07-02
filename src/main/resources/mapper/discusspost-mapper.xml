@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.fz.newcoder.community.dao.DiscussPostMapper">
+<mapper namespace="com.fz.community.dao.DiscussPostMapper">
 
     <sql id="selectFields">
         id, user_id, title, content, type, status, create_time, comment_count, score
@@ -21,7 +21,7 @@
         update newcodercommnuity.discuss_post set comment_count = #{commentCount} where id = #{id}
     </update>
 
-    <select id="selectDiscussPosts" resultType="DiscussPost">
+    <select id="selectDiscussPosts" resultType="com.fz.community.entity.DiscussPost">
         select <include refid="selectFields"></include>
         from discuss_post
         where status != 2
@@ -41,7 +41,7 @@
         </if>
     </select>
 
-    <select id="selectDiscussPostById" resultType="com.fz.newcoder.community.entity.DiscussPost">
+    <select id="selectDiscussPostById" resultType="com.fz.community.entity.DiscussPost">
         select <include refid="selectFields"></include> from newcodercommnuity.discuss_post
         where id = #{id}
     </select>

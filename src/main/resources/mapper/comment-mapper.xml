@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.fz.newcoder.community.dao.CommentMapper">
+<mapper namespace="com.fz.community.dao.CommentMapper">
 
     <sql id="selectFields">
         id, user_Id,entity_type,entity_id,target_Id,content,status,create_time
@@ -18,7 +18,7 @@
     </insert>
 
 
-    <select id="selectCommentByEntity" resultType="com.fz.newcoder.community.entity.Comment">
+    <select id="selectCommentByEntity" resultType="com.fz.community.entity.Comment">
         select <include refid="selectFields"></include>
         from newcodercommnuity.comment
         where status = 0
@@ -33,6 +33,11 @@
         where status = 0
         and entity_type = #{entityType}
         and entity_id = #{entityId}
+    </select>
+    <select id="findCommentById" resultType="com.fz.community.entity.Comment">
+        select <include refid="selectFields"></include>
+        from newcodercommnuity.comment
+        where id = #{id}
     </select>
 
 
